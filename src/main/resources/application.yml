@@ -1,0 +1,20 @@
+spring:
+  profiles:
+    active: production
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:8081/realms/coloc-app-keycloak
+jwt:
+  auth:
+    converter:
+      resource-id: coloc-app-client
+keycloak:
+  realm: coloc-app-keycloak
+  domain: localhost:8081
+  clientId: coloc-app-client
+  clientSecret: VmRY3CfOfTiqjsp5BdJ2bi2dKb92PSRK
+  client: coloc-app-client
+  urls:
+    auth: http://${keycloak.domain}
